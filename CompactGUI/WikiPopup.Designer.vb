@@ -22,9 +22,12 @@ Partial Class WikiPopup
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(WikiPopup))
         Me.GamesTable = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ImportantToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -73,6 +76,16 @@ Partial Class WikiPopup
         Me.Panel1.Size = New System.Drawing.Size(430, 375)
         Me.Panel1.TabIndex = 9
         '
+        'ImportantToolTip
+        '
+        Me.ImportantToolTip.AutomaticDelay = 100
+        Me.ImportantToolTip.AutoPopDelay = 3000
+        Me.ImportantToolTip.BackColor = System.Drawing.Color.White
+        Me.ImportantToolTip.InitialDelay = 100
+        Me.ImportantToolTip.ReshowDelay = 20
+        Me.ImportantToolTip.ShowAlways = True
+        Me.ImportantToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        '
         'WikiPopup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -81,10 +94,12 @@ Partial Class WikiPopup
         Me.ClientSize = New System.Drawing.Size(430, 375)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "WikiPopup"
         Me.Opacity = 0R
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Form2"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -95,4 +110,5 @@ Partial Class WikiPopup
     Friend WithEvents GamesTable As TableLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents ImportantToolTip As ToolTip
 End Class
